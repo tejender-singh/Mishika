@@ -55,7 +55,7 @@
         /></a>
       </div>
       <div style="display: flex; justify-content: center">
-        <img style="max-width: 10vw" src="images/cake.gif" />
+        <img style="max-width: 35vh" src="images/cake.gif" />
       </div>
       <h3>Some special wishes...</h3>
       <span>Click on each row to expand the message</span>
@@ -119,7 +119,7 @@
                 class="card-title activator grey-text text-darken-4"
                 style="padding-left: 10px"
               >
-                HARSHITA
+                HARSHITHA
               </h5>
             </div>
           </div>
@@ -201,7 +201,7 @@
               <img
                 class="responsive-img circle"
                 style="max-width: 10vw"
-                src="images/dp/aashma.png"
+                src="images/dp/aashma.jpg"
               />
               <h5
                 class="card-title activator grey-text text-darken-4"
@@ -385,15 +385,25 @@
         </li>
         <li>
           <div class="collapsible-header">
-            <i class="material-icons blue-text" style="font-size: 50px"
-              >title</i
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
             >
-            <h5
-              class="card-title activator grey-text text-darken-4"
-              style="padding-left: 10px"
-            >
-              THEA
-            </h5>
+              <img
+                class="responsive-img circle"
+                style="max-width: 10vw"
+                src="images/dp/thea.jpg"
+              />
+              <h5
+                class="card-title activator grey-text text-darken-4"
+                style="padding-left: 10px"
+              >
+                THEA
+              </h5>
+            </div>
           </div>
           <div class="collapsible-body">
             <div class="row">
@@ -666,11 +676,17 @@
         shigh = sh_min;
       }
       var isPlaying = false;
+      var element = document.getElementById("music");
+      var audio = document.getElementById("myAudio");
+      var icon = document.getElementById("musicicon");
+      element.classList.add("blue");
+      element.classList.remove("red");
+      element.classList.remove("pulse");
+      icon.innerHTML = "pause";
+      audio.play();
+      isPlaying = true;
 
       function toggleMusic() {
-        var element = document.getElementById("music");
-        var audio = document.getElementById("myAudio");
-        var icon = document.getElementById("musicicon");
         if (isPlaying) {
           audio.pause();
           element.classList.remove("blue");
