@@ -676,17 +676,11 @@
         shigh = sh_min;
       }
       var isPlaying = false;
-      var element = document.getElementById("music");
-      var audio = document.getElementById("myAudio");
-      var icon = document.getElementById("musicicon");
-      element.classList.add("blue");
-      element.classList.remove("red");
-      element.classList.remove("pulse");
-      icon.innerHTML = "pause";
-      audio.play();
-      isPlaying = true;
 
       function toggleMusic() {
+        var element = document.getElementById("music");
+        var audio = document.getElementById("myAudio");
+        var icon = document.getElementById("musicicon");
         if (isPlaying) {
           audio.pause();
           element.classList.remove("blue");
