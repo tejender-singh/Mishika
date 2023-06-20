@@ -23,6 +23,7 @@
   </head>
 
   <body>
+    <audio id="myAudio" src="songs/tswift.mp3"></audio>
     <div class="container">
       <div style="display: flex; justify-content: center">
         <h2 class="blue-text">Happy Birthday!!</h2>
@@ -53,7 +54,9 @@
           ><img src="images/carousel/7.png"
         /></a>
       </div>
-      <br />
+      <div style="display: flex; justify-content: center">
+        <img style="max-width: 10vw" src="images/cake.gif" />
+      </div>
       <h3>Some special wishes...</h3>
       <span>Click on each row to expand the message</span>
       <ul class="collapsible">
@@ -394,7 +397,7 @@
           </div>
           <div class="collapsible-body">
             <div class="row">
-              <div class="grid-example col s12 m6">
+              <div class="grid-example col s12">
                 <span style="padding-left: 20px">
                   <br />Dear Mishika,<br />
 
@@ -452,6 +455,16 @@
         </li>
       </ul>
     </div>
+    <div class="fixed-action-btn">
+      <a
+        id="music"
+        onclick="toggleMusic()"
+        class="btn-floating btn-large red pulse"
+      >
+        <i id="musicicon" class="large material-icons">play_arrow</i>
+      </a>
+    </div>
+
     <!--JavaScript at end of body for optimized loading-->
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript">
@@ -460,6 +473,8 @@
         var instances = M.Collapsible.init(elems, {});
         var elems2 = document.querySelectorAll(".carousel");
         var instances2 = M.Carousel.init(elems2, {});
+        var elems3 = document.querySelectorAll(".fixed-action-btn");
+        var instances3 = M.FloatingActionButton.init(elems3, {});
       });
 
       var bits = 80; // how many bits
@@ -649,6 +664,28 @@
         }
         swide = sw_min;
         shigh = sh_min;
+      }
+      var isPlaying = false;
+
+      function toggleMusic() {
+        var element = document.getElementById("music");
+        var audio = document.getElementById("myAudio");
+        var icon = document.getElementById("musicicon");
+        if (isPlaying) {
+          audio.pause();
+          element.classList.remove("blue");
+          element.classList.add("red");
+          element.classList.add("pulse");
+          icon.innerHTML = "play_arrow";
+          isPlaying = false;
+        } else {
+          element.classList.add("blue");
+          element.classList.remove("red");
+          element.classList.remove("pulse");
+          icon.innerHTML = "pause";
+          audio.play();
+          isPlaying = true;
+        }
       }
       // ]]>
     </script>
