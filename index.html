@@ -35,8 +35,9 @@
         justify-content: center;
         align-items: center;
       "
+      id="showButton"
     >
-      <a class="waves-effect waves-light btn-small blue" id="showButton"
+      <a class="waves-effect waves-light btn-small blue"
         >START<i class="material-icons left">play_arrow</i></a
       >
     </div>
@@ -723,10 +724,10 @@
         showButton.addEventListener("click", function () {
           myDiv.style.display = "block";
           showButton.style.display = "none";
-          var elems = document.querySelectorAll(".collapsible");
-          var instances = M.Collapsible.init(elems, {});
           var elems2 = document.querySelectorAll(".carousel");
           var instances2 = M.Carousel.init(elems2, {});
+          var elems = document.querySelectorAll(".collapsible");
+          var instances = M.Collapsible.init(elems, {});
           var elems3 = document.querySelectorAll(".fixed-action-btn");
           var instances3 = M.FloatingActionButton.init(elems3, {});
           toggleMusic();
